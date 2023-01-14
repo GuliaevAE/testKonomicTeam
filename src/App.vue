@@ -1,28 +1,50 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <v-app class="app">
+    <Navbar :tabs="tabs" v-on:switchComponent="tab=>this.currentTab=tab"/>
+
+    <v-main class="components">
+      <keep-alive>
+        <component  :is="currentTabComponent"></component>
+      </keep-alive>
+    </v-main>
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
+import Navbar from './components/Navbar.vue'
 export default {
   name: 'App',
+
   components: {
-    HelloWorld
-  }
-}
+    Navbar,
+    CompOne: () => import('./components/CompOne.vue'),
+    CompTwo: () => import('./components/CompTwo.vue')
+  },
+
+  data: () => ({
+    tabs: ["CompOne", "CompTwo"],
+    currentTab: "CompOne",
+
+  }),
+  computed: {
+    currentTabComponent() {                               //при изменении currentTab меняем компонент
+      return this.currentTab;
+    }
+  },
+};
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style lang="scss">
+
+.app::-webkit-scrollbar{
+  width: 0;
+}
+
+.components{
+  max-height: 100vh;
+  width: 100vw;
+  background: rgb(202, 202, 202);
+  overflow: hidden;
 }
 </style>
