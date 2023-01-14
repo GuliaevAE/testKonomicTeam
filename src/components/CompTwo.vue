@@ -1,23 +1,17 @@
 <template>
   <v-container class="container">
-    <v-row>
-      <v-col>
-        <v-select sm="12" outlined label="Change symbol" :items="options" v-model="currentSymbol"></v-select>
-      </v-col>
-    </v-row>
-    <v-row>
-      
-        <v-list-item >
+    <v-row justify="center">
+      <v-col sm="6">
+        <v-select outlined label="Change symbol" :items="options" v-model="currentSymbol"></v-select>
+        <v-list-item v-for="i in symbollist" :key="i.value">
           <v-list-item-content>
-            <v-col  v-for="i in symbollist" :key="i.value">
             <v-list-item-title>{{ i.name }}</v-list-item-title>
             <v-list-item-subtitle>
               {{ i.value }}
-            </v-list-item-subtitle>
-          </v-col>
+            </v-list-item-subtitle> 
           </v-list-item-content>
         </v-list-item>
-      
+      </v-col>
     </v-row>
   </v-container>
 </template>

@@ -1,7 +1,6 @@
 <template>
   <v-app class="app">
     <Navbar :tabs="tabs" v-on:switchComponent="tab=>this.currentTab=tab"/>
-
     <v-main class="components">
       <keep-alive>
         <component  :is="currentTabComponent"></component>
@@ -46,5 +45,8 @@ export default {
   width: 100vw;
   background: rgb(202, 202, 202);
   overflow: hidden;
+  &::-webkit-scrollbar{
+    width: 0;
+  }
 }
 </style>

@@ -4,6 +4,7 @@ import App from './App.vue'
 import myCore from './core/myCore';
 import axios from 'axios';
 import vuetify from './plugins/vuetify'
+import './style/main.css'
 
 Vue.config.productionTip = false;
 Vue.prototype.$http = axios;

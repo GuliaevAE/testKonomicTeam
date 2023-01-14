@@ -42,7 +42,7 @@
         </tr>
       </tbody>
     </table>
-    
+
   </div>
 </template>
 
@@ -59,7 +59,7 @@ export default {
   overflow-y: auto;
   overflow-x: hidden;
   background: rgb(217, 223, 217);
-  border:1px solid rgb(86, 86, 201);
+  border: 1px solid rgb(86, 86, 201);
   color: rgb(86, 86, 201);
   transition: all .3s;
   border-radius: 10px;
@@ -84,6 +84,7 @@ export default {
       width: 200%;
       animation: actionText 3s linear infinite;
     }
+
     .table__caption_title {
       display: flex;
       span {
@@ -93,7 +94,7 @@ export default {
         width: 33%;
         color: rgb(86, 86, 201);
         font-weight: 600;
-        
+
       }
     }
   }
