@@ -15,12 +15,7 @@
           <span>
             <slot></slot>
           </span>
-          <span>
-            <slot></slot>
-          </span>
-          <span>
-            <slot></slot>
-          </span>
+          
         </div>
 
 
@@ -55,7 +50,7 @@ export default {
 
 <style lang="scss" scoped>
 .wrapTable {
-  height: calc(100vh - 65px);
+  height: calc(100vh - 125px);
   overflow-y: auto;
   overflow-x: hidden;
   background: rgb(217, 223, 217);
@@ -64,7 +59,7 @@ export default {
   transition: all .3s;
   border-radius: 10px;
   padding-left: 10px;
-
+  
   &:hover::-webkit-scrollbar-thumb {
     background-color: rgb(86, 86, 201);
     border-radius: 3px;
@@ -80,13 +75,14 @@ export default {
   }
 
   .table__caption_bg {
-    div {
-      width: 200%;
-      animation: actionText 3s linear infinite;
-    }
+    
+   width: 100%;
+   overflow: hidden;
 
     .table__caption_title {
       display: flex;
+      width: 200%;
+      animation: actionText 3s linear infinite;
       span {
         font-size: 30px;
         font-style: italic;
@@ -100,13 +96,15 @@ export default {
   }
 
   .table-row__th {
-    font-size: 30px;
+    font-size: 15px;
     font-weight: 600;
     text-shadow: 0 0 3px white;
   }
 
+
   .table-row__td {
-    font-size: 15px;
+    font-size: 12px;
+    
   }
 
 }
