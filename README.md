@@ -1,5 +1,9 @@
 # pr
 
+## Deployed site
+https://test-konomic-team.vercel.app
+-----------------
+
 ## Project setup
 ```
 npm install
